@@ -15,11 +15,12 @@ header {
 }
 
 header h1 {
+  font-family: "Courier Prime", monospace;
   font-size: 70px;
   font-weight: 500;
   color: #000000;
   border-right: 4px solid #000;
-  animation: cursor 1s infinite step-end, typing 15s infinite steps(16);
+  animation: cursor 1s infinite step-end, typing 15s infinite steps(21);
   white-space: nowrap;
   overflow: hidden;
 }
@@ -30,8 +31,8 @@ header h1 {
 
 @keyframes typing{
   0%{ width: 0ch} /*Text is hidden*/
-  30%{ width: 16ch;} /*The enitre header will be typed out*/
-  80%{ width: 16ch;} /*Text stays visible*/
+  30%{ width: 21ch;} /*The enitre header will be typed out*/
+  80%{ width: 21ch;} /*Text stays visible*/
   90%{ width: 0ch;} /*Text is deleted*/
   100%{ width: 0ch;} /*Text stays hidden*/
 }
@@ -39,11 +40,10 @@ header h1 {
 .demo-card-square.mdl-card {
     width: 500px;
     height: 500px;
-
 }
 
 .demo-card-square>.mdl-card__title {
+    font-family: "Courier Prime", monospace;
     color: #fff;
-    background:
-        url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+    background: bottom right 15% no-repeat #46B6AC;
 }
