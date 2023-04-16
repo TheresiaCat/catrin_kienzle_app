@@ -1,5 +1,5 @@
 import { newTodoInput, todosContainer } from "./dom-utils";
-import { Todo } from "./types/interfaces";
+import { Todo } from "./interface";
 import { validateInput } from "./validator";
 
 let todos: Todo[] = [];
