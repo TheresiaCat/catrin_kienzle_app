@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sommerurlaub-Packliste</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="./build/bundle.js"></script>
 </head>
 <body>
     <header>
@@ -14,7 +15,12 @@
           </button>
         <h1>Sommerurlaub-Packliste</h1>
     </header>
-
-    <input type="t" id="myInput" />
+    <div class="notice">
+        <p><strong>Add a new todo:</strong></p>
+        <input type="text" name="newTodoInput" id="newTodoInput" /><br />
+        <button id="newTodoBtn">Add Todo</button><br />
+        <small><span id="validatorMessage"></span></small>
+      </div>
+      <div id="todosContainer"></div>
 </body>
 </html>
