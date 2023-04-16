@@ -3,10 +3,10 @@ import { newStuffBtn as newStuffBtn, newStuffInput as newStuffInput, validatorMe
 function validateInput() {
   if (!newStuffInput.value) {
     newStuffBtn.disabled = true;
-    setValidatorMessage(ValidatorMessages.INPUT_EMTPY, true);
+    setValidatorMessage(ValidatorMessages.INPUT_EMPTY, true);
     return false;
   }
-  // Validated succesfully
+  // Validated successfully
   else {
     newStuffBtn.disabled = false;
     setValidatorMessage(ValidatorMessages.INPUT_VALID);
@@ -25,7 +25,7 @@ function setValidatorMessage(msg: string, error = false) {
 }
 
 const ValidatorMessages = {
-  INPUT_EMTPY: "You must type something!",
+  INPUT_EMPTY: "You must type something!",
   INPUT_VALID: "Great, Press the Button or 'Enter' to add",
 };
 

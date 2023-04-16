@@ -28,11 +28,11 @@ function deleteStuff(id: string) {
   reloadStuff();
 }
 
-//ändert status (abgehakt?)
+//alters status (abgehakt?)
 function ChangeStatus(id: string) { 
   stuff = stuff.map((stuffStatus) => {
     if (stuffStatus.id === id) {
-      stuffStatus.finished = !stuffStatus.finished; // oposite finished State
+      stuffStatus.finished = !stuffStatus.finished; // opposite finished State
     }
     return stuffStatus;
   });
@@ -67,7 +67,7 @@ function reloadStuff() {
       const finishedBtn = document.createElement("button");
       finishedBtn.addEventListener("click", () => ChangeStatus(stuff.id));
       if (stuff.finished) {
-        finishedBtn.innerHTML = "set unifinished";
+        finishedBtn.innerHTML = "set unfinished";
       } else {
         finishedBtn.innerHTML = "set finished";
       }
