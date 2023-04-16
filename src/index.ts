@@ -1,1 +1,3 @@
-//THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
+import { greeting } from "./modul"; 
+
+console.log(greeting); 
