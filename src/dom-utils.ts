@@ -1,12 +1,12 @@
-const newTodoInput = document.querySelector(
-    "#newTodoInput"
+const newStuffInput = document.querySelector(
+    "#newStuffInput"
   ) as HTMLInputElement;
-  const newTodoBtn = document.querySelector("#newTodoBtn") as HTMLButtonElement;
+  const newStuffBtn = document.querySelector("#newStuffBtn") as HTMLButtonElement;
   const validatorMessage = document.querySelector(
     "#validatorMessage"
   ) as HTMLSpanElement;
-  const todosContainer = document.querySelector(
-    "#todosContainer"
+  const stuffsContainer = document.querySelector(
+    "#stuffsContainer"
   ) as HTMLDivElement;
   
-  export { newTodoInput, newTodoBtn, todosContainer, validatorMessage };
+  export { newStuffInput, newStuffBtn, stuffsContainer, validatorMessage };

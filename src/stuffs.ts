@@ -1,12 +1,12 @@
-import { newTodoInput as newStuffInput, todosContainer as stuffContainer } from "./dom-utils";
-import { Todo as Stuff } from "./interface";
+import { newStuffInput , stuffsContainer} from "./dom-utils";
+import { Stuff as Stuff } from "./interface";
 import { validateInput } from "./validator";
 
 let stuff: Stuff[] = [];
 
 function addStuff() {
   if (!validateInput()) {
-    return; // if input is not valid, we wont add a new todo by returning here
+    return; // if input is not valid, we wont add a new stuff by returning here
   }
   const timestamp = new Date();
   const newStuff: Stuff = {
@@ -24,11 +24,11 @@ function addStuff() {
 
 function deleteStuff(id: string) {
   // let all stuffs pass except the one with the id that will be deleted
-  stuff = stuff.filter((todo: Stuff) => todo.id !== id);
+  stuff = stuff.filter((stuff: Stuff) => stuff.id !== id);
   reloadStuff();
 }
 
-//ändert To-DO status 
+//ändert status (abgehakt?)
 function ChangeStatus(id: string) { 
   stuff = stuff.map((stuffStatus) => {
     if (stuffStatus.id === id) {
@@ -41,8 +41,8 @@ function ChangeStatus(id: string) {
 
 function reloadStuff() {
   //empty the stuff list
-  stuffContainer.innerHTML = "";
-  // Iterate through Todos to refresh HTML
+  stuffsContainer.innerHTML = "";
+  // Iterate through Stuffs to refresh HTML
   stuff
     .sort((stuff1, stuff2) => {
       //sort stuff by date
@@ -76,9 +76,9 @@ function reloadStuff() {
       singleStuffContainer.appendChild(deleteBtn);
       singleStuffContainer.appendChild(finishedBtn);
       //append it to the wrapper
-      stuffContainer.appendChild(singleStuffContainer);
+      stuffsContainer.appendChild(singleStuffContainer);
       //separator between each item
-      stuffContainer.appendChild(document.createElement("hr"));
+      stuffsContainer.appendChild(document.createElement("hr"));
     });
 }
 

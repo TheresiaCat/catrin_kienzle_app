@@ -1,17 +1,17 @@
-import { addStuff } from "./todos";
-import { newTodoBtn, newTodoInput } from "./dom-utils";
+import { addStuff } from "./stuffs";
+import { newStuffBtn, newStuffInput } from "./dom-utils";
 import { validateInput } from "./validator";
 
 function initApp() {
-  newTodoBtn.disabled = true;
-  newTodoBtn.addEventListener("click", addStuff);
-  newTodoInput.addEventListener("input", validateInput);
-  newTodoInput.addEventListener("keydown", hasPressedEnterKeyOnTodoInput);
+  newStuffBtn.disabled = true;
+  newStuffBtn.addEventListener("click", addStuff);
+  newStuffInput.addEventListener("input", validateInput);
+  newStuffInput.addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
 }
 
-function hasPressedEnterKeyOnTodoInput(e: KeyboardEvent) {
+function hasPressedEnterKeyOnStuffInput(e: KeyboardEvent) {
   if (e.key === "Enter") {
-    addStuff(); // try to add a todo by pressing the enter key on the keyboard
+    addStuff(); // try to add a stuff by pressing the enter key on the keyboard
   }
 }
 

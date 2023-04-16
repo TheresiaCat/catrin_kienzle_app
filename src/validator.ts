@@ -1,14 +1,14 @@
-import { newTodoBtn, newTodoInput, validatorMessage } from "./dom-utils";
+import { newStuffBtn as newStuffBtn, newStuffInput as newStuffInput, validatorMessage } from "./dom-utils";
 
 function validateInput() {
-  if (!newTodoInput.value) {
-    newTodoBtn.disabled = true;
+  if (!newStuffInput.value) {
+    newStuffBtn.disabled = true;
     setValidatorMesssage(ValidatorMessages.INPUT_EMTPY, true);
     return false;
   }
   // Validated succesfully
   else {
-    newTodoBtn.disabled = false;
+    newStuffBtn.disabled = false;
     setValidatorMesssage(ValidatorMessages.INPUT_VALID);
     return true;
   }
