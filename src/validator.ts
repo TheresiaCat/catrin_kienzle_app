@@ -3,19 +3,19 @@ import { newStuffBtn as newStuffBtn, newStuffInput as newStuffInput, validatorMe
 function validateInput() {
   if (!newStuffInput.value) {
     newStuffBtn.disabled = true;
-    setValidatorMesssage(ValidatorMessages.INPUT_EMTPY, true);
+    setValidatorMessage(ValidatorMessages.INPUT_EMTPY, true);
     return false;
   }
   // Validated succesfully
   else {
     newStuffBtn.disabled = false;
-    setValidatorMesssage(ValidatorMessages.INPUT_VALID);
+    setValidatorMessage(ValidatorMessages.INPUT_VALID);
     return true;
   }
 }
 
 /** Set Message of the validator */
-function setValidatorMesssage(msg: string, error = false) {
+function setValidatorMessage(msg: string, error = false) {
   validatorMessage.innerHTML = msg;
   if (error) {
     validatorMessage.style.color = "red";
