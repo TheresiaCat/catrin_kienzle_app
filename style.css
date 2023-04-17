@@ -2,7 +2,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Courier Prime", monospace;
+  font-family: "Arial", monospace;
   background-color: #fdfdfe;
 }
 header {
@@ -16,13 +16,20 @@ header {
 
 header h1 {
   font-family: "Courier Prime", monospace;
-  font-size: 70px;
+  font-size: 90px;
   font-weight: 500;
   color: #000000;
   border-right: 4px solid #000;
   animation: cursor 1s infinite step-end, typing 15s infinite steps(21);
   white-space: nowrap;
   overflow: hidden;
+}
+
+h3{
+  font-family: "Courier Prime", monospace;
+  font-size: 70px;
+  font-weight: 500;
+  color: #000000;
 }
 @keyframes cursor {
   0%, 100%{border-color: transparent;}
