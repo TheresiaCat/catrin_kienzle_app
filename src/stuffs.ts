@@ -2,7 +2,21 @@ import { newStuffInput , stuffsContainer} from "./dom-utils";
 import { Stuff as Stuff } from "./interface";
 import { validateInput } from "./validator";
 
-let stuff: Stuff[] = [];
+let stuff: Stuff[] = [{
+  description: "Kreditkarte",
+  id: "1",
+  finished: false,
+  timestamp: new Date()
+}];
+
+let newStuff: Stuff = {
+  description: "Geld",
+  id: "2",
+  finished: false,
+  timestamp: new Date()
+};
+
+stuff.push(newStuff);
 
 function addStuff() {
   if (!validateInput()) {
@@ -39,11 +53,11 @@ function ChangeStatus(id: string) {
   reloadStuff();
 }
 
-function reloadStuff() {
+function reloadStuff() {//insert Parameter Array
   //empty the stuff list
   stuffsContainer.innerHTML = "";
   // Iterate through Stuffs to refresh HTML
-  stuff
+  stuff//Array
     .sort((stuff1, stuff2) => {
       //sort stuff by date
       return stuff2.timestamp.getTime() - stuff1.timestamp.getTime();
@@ -54,8 +68,7 @@ function reloadStuff() {
       singleStuffContainer.id = stuff.id;
       singleStuffContainer.innerHTML = `
     <p style="${stuff.finished && "text-decoration: line-through;"}">
-    ${stuff.description}</p>
-    `;
+    ${stuff.description}</p>`;
 
       //create Delete Button
       const deleteBtn = document.createElement("button");

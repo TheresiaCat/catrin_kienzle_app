@@ -1,4 +1,4 @@
-import { addStuff } from "./stuffs";
+import { addStuff, reloadStuff } from "./stuffs";
 import { newStuffBtn, newStuffInput } from "./dom-utils";
 import { validateInput } from "./validator";
 
@@ -7,6 +7,7 @@ function initApp() {
   newStuffBtn.addEventListener("click", addStuff);
   newStuffInput.addEventListener("input", validateInput);
   newStuffInput.addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
+  reloadStuff();
 }
 
 function hasPressedEnterKeyOnStuffInput(e: KeyboardEvent) {
