@@ -704,7 +704,7 @@ progress:indeterminate::-moz-progress-bar {
   cursor: pointer;
 }
 
-.notice {
+h3 > div {
   border: 2px;
   border-radius: 5px;
   padding: 1.5rem;
