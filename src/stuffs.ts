@@ -60,7 +60,7 @@ function reloadStuff() {//insert Parameter Array
   stuff//Array
     .sort((stuff1, stuff2) => {
       //sort stuff by date
-      return stuff2.timestamp.getTime() - stuff1.timestamp.getTime();
+      return stuff1.timestamp.getTime()-stuff2.timestamp.getTime();
     })
     .forEach((stuff) => {
       //create container for Stuff
