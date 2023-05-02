@@ -1,23 +1,40 @@
 const newStuffInput = document.querySelector(
-    "#newStuffInput"
-  ) as HTMLInputElement;
-  const newStuffBtn = document.querySelector("#newStuffBtn") as HTMLButtonElement;
-  const validatorMessage = document.querySelector(
-    "#validatorMessage"
-    ) as HTMLSpanElement;
-  
-    //Container
-  const moneyContainer = document.querySelector(
-    "#moneyContainer"
-  ) as HTMLDivElement;
-  const papersContainer = document.querySelector(
-    "#papersContainer"
-  ) as HTMLDivElement;
-  const hygieneContainer = document.querySelector(
-    "#hygieneContainer"
-  ) as HTMLDivElement;
-  const clothingContainer = document.querySelector(
-    "#clothingContainer"
-  ) as HTMLDivElement;
-  
-  export { newStuffInput, newStuffBtn, moneyContainer,papersContainer,hygieneContainer,clothingContainer, validatorMessage };
+  "#newStuffInput"
+) as HTMLInputElement;
+
+//Buttons
+const btn = document.querySelector(".btn") as HTMLButtonElement;
+const moneyBtn = document.querySelector("#moneyBtn") as HTMLButtonElement;
+const papersBtn = document.querySelector("#papersBtn") as HTMLButtonElement;
+const hygieneBtn = document.querySelector("#hygieneBtn") as HTMLButtonElement;
+const clothingBtn = document.querySelector("#clothingBtn") as HTMLButtonElement;
+
+const validatorMessage = document.querySelector(
+  "#validatorMessage"
+) as HTMLSpanElement;
+
+//Container
+const moneyContainer = document.querySelector("#moneyContainer") as HTMLDivElement;
+const papersContainer = document.querySelector(
+  "#papersContainer"
+) as HTMLDivElement;
+const hygieneContainer = document.querySelector(
+  "#hygieneContainer"
+) as HTMLDivElement;
+const clothingContainer = document.querySelector(
+  "#clothingContainer"
+) as HTMLDivElement;
+
+export {
+  newStuffInput,
+  btn,
+  moneyContainer,
+  papersContainer,
+  hygieneContainer,
+  clothingContainer,
+  moneyBtn,
+  papersBtn,
+  hygieneBtn,
+  clothingBtn,
+  validatorMessage
+};
