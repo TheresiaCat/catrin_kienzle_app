@@ -4,4 +4,5 @@ export interface Stuff {
     finished: boolean;
     timestamp: Date;
     category: string;
+    container: string; 
   }

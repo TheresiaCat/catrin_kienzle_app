@@ -7,7 +7,8 @@ let stuff: Stuff[] = [{
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "money", 
+  category: "money",
+  container: "moneyContainer",
 }];
 
 let geld: Stuff = {
@@ -15,7 +16,8 @@ let geld: Stuff = {
   id: "2",
   finished: false,
   timestamp: new Date(),
-  category: "money", 
+  category: "money",
+  container: "moneyContainer", 
 }
 
 let ticket: Stuff = {
@@ -24,6 +26,7 @@ let ticket: Stuff = {
   finished: false,
   timestamp: new Date(),
   category: "papers", 
+  container: "papersContainer",
 };
 
 let ausweis: Stuff = {
@@ -31,7 +34,8 @@ let ausweis: Stuff = {
   id: "2",
   finished: false,
   timestamp: new Date(),
-  category: "papers", 
+  category: "papers",
+  container: "papersContainer",
 }
 
 let zahnbürste: Stuff = {
@@ -39,7 +43,8 @@ let zahnbürste: Stuff = {
   id: "2",
   finished: false,
   timestamp: new Date(),
-  category: "hygiene", 
+  category: "hygiene",
+  container: "papersContainer",
 }
 
 let shampoo: Stuff = {
@@ -47,7 +52,8 @@ let shampoo: Stuff = {
   id: "2",
   finished: false,
   timestamp: new Date(),
-  category: "hygiene", 
+  category: "hygiene",
+  container: "hygieneContainer",
 }
 
 let shirt: Stuff = {
@@ -55,7 +61,8 @@ let shirt: Stuff = {
   id: "2",
   finished: false,
   timestamp: new Date(),
-  category: "clothing", 
+  category: "clothing",
+  container: "clothingContainer",
 }
 
 let jeans: Stuff = {
@@ -63,10 +70,10 @@ let jeans: Stuff = {
   id: "2",
   finished: false,
   timestamp: new Date(),
-  category: "clothing", 
+  category: "clothing",
+  container: "clothingContainer", 
 }
 stuff.push(geld, ticket, ausweis,zahnbürste,shampoo,shirt,jeans);
-console.log(Stuff[]); 
 
 function addStuff() {
   if (!validateInput()) {
@@ -79,7 +86,8 @@ function addStuff() {
     id: `${timestamp.getTime()}-rn-${Math.floor(Math.random() * 999)}`,
     finished: false,
     timestamp,
-    category: //h2 übergeben 
+    category: //h3 übergeben 
+    container: 
   };
   stuff.push(newStuff);
   reloadStuff();
