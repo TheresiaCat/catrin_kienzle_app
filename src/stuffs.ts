@@ -1,4 +1,4 @@
-import { newStuffInput , stuffsContainer} from "./dom-utils";
+import { newStuffInput ,  moneyContainer,papersContainer,hygieneContainer,clothingContainer} from "./dom-utils";
 import { Stuff as Stuff } from "./interface";
 import { validateInput } from "./validator";
 
@@ -87,7 +87,7 @@ function addStuff() {
     finished: false,
     timestamp,
     category: //h3 übergeben 
-    container: 
+    container: //whatever button was pressed 
   };
   stuff.push(newStuff);
   reloadStuff();

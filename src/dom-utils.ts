@@ -20,4 +20,4 @@ const newStuffInput = document.querySelector(
     "#clothingContainer"
   ) as HTMLDivElement;
   
-  export { newStuffInput, newStuffBtn, stuffsContainer, validatorMessage };
+  export { newStuffInput, newStuffBtn, moneyContainer,papersContainer,hygieneContainer,clothingContainer, validatorMessage };
