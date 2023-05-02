@@ -1,4 +1,4 @@
-import { newStuffInput ,  moneyContainer,papersContainer,hygieneContainer,clothingContainer} from "./dom-utils";
+import { newStuffInput , moneyContainer,papersContainer,hygieneContainer,clothingContainer, moneyBtn, papersBtn, hygieneBtn, clothingBtn} from "./dom-utils";
 import { Stuff as Stuff } from "./interface";
 import { validateInput } from "./validator";
 
@@ -13,7 +13,7 @@ let stuff: Stuff[] = [{
 
 let geld: Stuff = {
   description: "Geld",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "money",
@@ -22,7 +22,7 @@ let geld: Stuff = {
 
 let ticket: Stuff = {
   description: "Reiseticket",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "papers", 
@@ -31,7 +31,7 @@ let ticket: Stuff = {
 
 let ausweis: Stuff = {
   description: "Ausweis/Reisepass",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "papers",
@@ -40,7 +40,7 @@ let ausweis: Stuff = {
 
 let zahnbürste: Stuff = {
   description: "Zahnbürste",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "hygiene",
@@ -49,7 +49,7 @@ let zahnbürste: Stuff = {
 
 let shampoo: Stuff = {
   description: "Shampoo",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "hygiene",
@@ -58,7 +58,7 @@ let shampoo: Stuff = {
 
 let shirt: Stuff = {
   description: "Shirt",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "clothing",
@@ -67,13 +67,32 @@ let shirt: Stuff = {
 
 let jeans: Stuff = {
   description: "jeans",
-  id: "2",
+  id: "1",
   finished: false,
   timestamp: new Date(),
   category: "clothing",
   container: "clothingContainer", 
 }
 stuff.push(geld, ticket, ausweis,zahnbürste,shampoo,shirt,jeans);
+
+//choose right container depending on which button is pressed 
+let stuffsContainer:String
+function getContainer(stuffsContainer:String, btn: InnerHTML):String {
+  if(moneyBtn){
+    stuffsContainer="moneyContainer"
+  }
+  else if(papersBtn){
+    stuffsContainer="papersContainer"
+  }
+  else if(hygieneBtn){
+    stuffsContainer="hygieneContainer"
+  }
+  else{
+    stuffsContainer="clothingContainer"
+  }
+  console.log(stuffsContainer); 
+}
+
 
 function addStuff() {
   if (!validateInput()) {
@@ -87,10 +106,10 @@ function addStuff() {
     finished: false,
     timestamp,
     category: //h3 übergeben 
-    container: //whatever button was pressed 
+    container: getContainer(),//How to get value? 
   };
   stuff.push(newStuff);
-  reloadStuff();
+  reloadList();
   //empty input
   newStuffInput.value = "";
 }
@@ -98,7 +117,7 @@ function addStuff() {
 function deleteStuff(id: string) {
   // let all stuffs pass except the one with the id that will be deleted
   stuff = stuff.filter((stuff: Stuff) => stuff.id !== id);
-  reloadStuff();
+  reloadList();
 }
 
 //alters status (abgehakt?)
@@ -109,10 +128,10 @@ function ChangeStatus(id: string) {
     }
     return stuffStatus;
   });
-  reloadStuff();
+  reloadList();
 }
 
-function reloadStuff() {//insert Parameter Array
+function reloadList() {//insert Parameter Array
   //empty the stuff list
   stuffsContainer.innerHTML = "";
   // Iterate through Stuffs to refresh HTML
@@ -154,4 +173,4 @@ function reloadStuff() {//insert Parameter Array
     });
 }
 
-export { addStuff, deleteStuff, reloadStuff}; 
+export { addStuff, deleteStuff, reloadList}; 
