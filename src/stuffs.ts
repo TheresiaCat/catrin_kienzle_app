@@ -79,6 +79,7 @@ function addStuff() {
     id: `${timestamp.getTime()}-rn-${Math.floor(Math.random() * 999)}`,
     finished: false,
     timestamp,
+    category: //h2 übergeben 
   };
   stuff.push(newStuff);
   reloadStuff();
