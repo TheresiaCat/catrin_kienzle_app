@@ -1,6 +1,5 @@
-const newStuffInput = document.querySelector(
-  "#newStuffInput"
-) as HTMLInputElement;
+const newStuffInput = document.querySelector("#newStuffInput") as HTMLInputElement;
+const validatorMessage = document.querySelector("#validatorMessage") as HTMLSpanElement;
 
 //Buttons
 const btn = document.querySelector(".btn") as HTMLButtonElement;
@@ -9,21 +8,12 @@ const papersBtn = document.querySelector("#papersBtn") as HTMLButtonElement;
 const hygieneBtn = document.querySelector("#hygieneBtn") as HTMLButtonElement;
 const clothingBtn = document.querySelector("#clothingBtn") as HTMLButtonElement;
 
-const validatorMessage = document.querySelector(
-  "#validatorMessage"
-) as HTMLSpanElement;
-
 //Container
+const stuffsContainer = document.querySelector(".stuffsContainer") as HTMLDivElement;
 const moneyContainer = document.querySelector("#moneyContainer") as HTMLDivElement;
-const papersContainer = document.querySelector(
-  "#papersContainer"
-) as HTMLDivElement;
-const hygieneContainer = document.querySelector(
-  "#hygieneContainer"
-) as HTMLDivElement;
-const clothingContainer = document.querySelector(
-  "#clothingContainer"
-) as HTMLDivElement;
+const papersContainer = document.querySelector("#papersContainer") as HTMLDivElement;
+const hygieneContainer = document.querySelector("#hygieneContainer") as HTMLDivElement;
+const clothingContainer = document.querySelector("#clothingContainer") as HTMLDivElement;
 
 export {
   newStuffInput,
