@@ -1,13 +1,13 @@
-import { addStuff, reloadStuff } from "./stuffs";
-import { newStuffBtn, newStuffInput } from "./dom-utils";
+import { addStuff, reloadList } from "./stuffs";
+import { newStuffInput, btn} from "./dom-utils";
 import { validateInput } from "./validator";
 
 function initApp() {
-  newStuffBtn.disabled = true;
-  newStuffBtn.addEventListener("click", addStuff);
+  btn.disabled = true;
+  btn.addEventListener("click", addStuff);
   newStuffInput.addEventListener("input", validateInput);
   newStuffInput.addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
-  reloadStuff();
+  reloadList();
 }
 
 function hasPressedEnterKeyOnStuffInput(e: KeyboardEvent) {
