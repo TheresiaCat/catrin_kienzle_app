@@ -1,14 +1,14 @@
-import { newStuffBtn as newStuffBtn, newStuffInput as newStuffInput, validatorMessage } from "./dom-utils";
+import {newStuffInput, btn, moneyContainer,papersContainer,hygieneContainer,clothingContainer, moneyBtn, papersBtn, hygieneBtn, clothingBtn, validatorMessage } from "./dom-utils";
 
 function validateInput() {
   if (!newStuffInput.value) {
-    newStuffBtn.disabled = true;
+    btn.disabled = true;
     setValidatorMessage(ValidatorMessages.INPUT_EMPTY, true);
     return false;
   }
   // Validated successfully
   else {
-    newStuffBtn.disabled = false;
+    btn.disabled = false;
     setValidatorMessage(ValidatorMessages.INPUT_VALID);
     return true;
   }
