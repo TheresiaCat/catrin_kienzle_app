@@ -3,17 +3,17 @@ const validatorMessage = document.querySelector("#validatorMessage") as HTMLSpan
 
 //Input
 const inputgroup = document.querySelectorAll(".newStuffInput") as NodeListOf<HTMLInputElement>;
-const newMoneyInput = document.querySelector("#newMoneyInput") as HTMLInputElement;
-const newPapersInput = document.querySelector("#newPapersInput") as HTMLInputElement;
-const newHygieneInput = document.querySelector("#newHygieneInput") as HTMLInputElement;
-const newClothingInput = document.querySelector("#newClothingInput") as HTMLInputElement;
+const newMoneyInput = document.querySelector("#newmoneyinput") as HTMLInputElement;
+const newPapersInput = document.querySelector("#newpapersinput") as HTMLInputElement;
+const newHygieneInput = document.querySelector("#newhygieneinput") as HTMLInputElement;
+const newClothingInput = document.querySelector("#newclothinginput") as HTMLInputElement;
 
 //Buttons
 const btngroup = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>; //all buttons in group 
-const moneyBtn = document.querySelector("#moneyBtn") as HTMLButtonElement;
-const papersBtn = document.querySelector("#papersBtn") as HTMLButtonElement;
-const hygieneBtn = document.querySelector("#hygieneBtn") as HTMLButtonElement;
-const clothingBtn = document.querySelector("#clothingBtn") as HTMLButtonElement;
+const moneyBtn = document.querySelector("#money") as HTMLButtonElement;
+const papersBtn = document.querySelector("#papers") as HTMLButtonElement;
+const hygieneBtn = document.querySelector("#hygiene") as HTMLButtonElement;
+const clothingBtn = document.querySelector("#clothing") as HTMLButtonElement;
 
 //Container
 const stuffscontainergroup = document.querySelectorAll(".stuffsContainer") as NodeListOf<HTMLDivElement>;
@@ -24,6 +24,7 @@ const clothingContainer = document.querySelector("#clothingContainer") as HTMLDi
 
 export {
   newStuffInput,
+  inputgroup,
   btngroup,
   stuffscontainergroup,
   moneyContainer,
