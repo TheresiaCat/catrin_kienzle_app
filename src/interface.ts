@@ -3,6 +3,4 @@ export interface Stuff {
     id: string;
     finished: boolean;
     timestamp: Date;
-    category: string;
-    container: string; 
   }

@@ -7,8 +7,6 @@ let stuff: Stuff[] = [{
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "money",
-  container: "moneyContainer",
 }];
 
 let geld: Stuff = {
@@ -16,8 +14,6 @@ let geld: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "money",
-  container: "moneyContainer", 
 }
 
 let ticket: Stuff = {
@@ -25,8 +21,6 @@ let ticket: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "papers", 
-  container: "papersContainer",
 };
 
 let ausweis: Stuff = {
@@ -34,8 +28,6 @@ let ausweis: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "papers",
-  container: "papersContainer",
 }
 
 let zahnbürste: Stuff = {
@@ -43,8 +35,6 @@ let zahnbürste: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "hygiene",
-  container: "papersContainer",
 }
 
 let shampoo: Stuff = {
@@ -52,8 +42,6 @@ let shampoo: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "hygiene",
-  container: "hygieneContainer",
 }
 
 let shirt: Stuff = {
@@ -61,8 +49,6 @@ let shirt: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "clothing",
-  container: "clothingContainer",
 }
 
 let jeans: Stuff = {
@@ -70,8 +56,6 @@ let jeans: Stuff = {
   id: "1",
   finished: false,
   timestamp: new Date(),
-  category: "clothing",
-  container: "clothingContainer", 
 }
 stuff.push(geld, ticket, ausweis,zahnbürste,shampoo,shirt,jeans);
 
