@@ -61,16 +61,17 @@ stuff.push(geld, ticket, ausweis,zahnbürste,shampoo,shirt,jeans);
 
 //"this" is the actual clicked button 
 function handleButtonClick(this:HTMLButtonElement){
-  let id:String|null; //0 ist ausgeschlossen, dann keine rückgabe 
-  id = this.getAttribute("id"); 
-  if (id!==null){
-    let container: HTMLDivElement | null = document.querySelector("." + id); 
+  let buttonid:String|null; //0 ist ausgeschlossen, dann keine rückgabe 
+  buttonid = this.getAttribute("id"); 
+  if (buttonid!==null){
+    let container: HTMLDivElement | null = document.querySelector("." + buttonid); 
+    return container; 
   }
 }
 
 
 function addStuff() {
-  if (!validateInput()) {
+  if (!validateInput(this: HTMLInputElement)) {
     return; // if input is not valid, we wont add a new stuff by returning here
   }
   const timestamp = new Date();
@@ -80,8 +81,6 @@ function addStuff() {
     id: `${timestamp.getTime()}-rn-${Math.floor(Math.random() * 999)}`,
     finished: false,
     timestamp,
-    category: //h3 übergeben 
-    container: 
   };
   stuff.push(newStuff);
   reloadList();
@@ -143,4 +142,4 @@ function reloadList() {//insert Parameter Array
     });
 }
 
-export { addStuff, deleteStuff, reloadList}; 
+export { addStuff, deleteStuff, reloadList, handleButtonClick, }; 
