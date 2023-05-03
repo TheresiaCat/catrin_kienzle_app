@@ -1,6 +1,13 @@
 const newStuffInput = document.querySelector("#newStuffInput") as HTMLInputElement;
 const validatorMessage = document.querySelector("#validatorMessage") as HTMLSpanElement;
 
+//Input
+const inputgroup = document.querySelectorAll(".newStuffInput") as NodeListOf<HTMLInputElement>;
+const newMoneyInput = document.querySelector("#newMoneyInput") as HTMLInputElement;
+const newPapersInput = document.querySelector("#newPapersInput") as HTMLInputElement;
+const newHygieneInput = document.querySelector("#newHygieneInput") as HTMLInputElement;
+const newClothingInput = document.querySelector("#newClothingInput") as HTMLInputElement;
+
 //Buttons
 const btngroup = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>; //all buttons in group 
 const moneyBtn = document.querySelector("#moneyBtn") as HTMLButtonElement;
