@@ -1,15 +1,18 @@
-import { addStuff, reloadList } from "./stuffs";
-import { newStuffInput, btngroup} from "./dom-utils";
-import { validateInput } from "./validator";
+import { addStuff, reloadList, handleButtonClick} from "./stuffs";
+import { newStuffInput, btngroup, inputgroup} from "./dom-utils";
+import { validateInput, handleInput } from "./validator";
 
 //nur ein button freigeschaltet werden aktuell auf klassen 
 function initApp() {
-  btn.disabled = true;
   for(let i=0; i<btngroup.length;i++){
-    btngroup[i].addEventListener("click",handleButtonClick);
+    btngroup[i].addEventListener("click", handleButtonClick);
   }
-  newStuffInput.addEventListener("input", validateInput);
-  newStuffInput.addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
+
+  for(let i=0; i<inputgroup.length;i++){
+    inputgroup[i].addEventListener("input", validateInput);
+    inputgroup[i].addEventListener("input", handleInput);
+    inputgroup[i].addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
+  }
   reloadList();
 }
 
