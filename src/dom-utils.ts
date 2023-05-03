@@ -9,7 +9,7 @@ const hygieneBtn = document.querySelector("#hygieneBtn") as HTMLButtonElement;
 const clothingBtn = document.querySelector("#clothingBtn") as HTMLButtonElement;
 
 //Container
-const stuffsContainer = document.querySelector(".stuffsContainer") as HTMLDivElement;
+const stuffscontainergroup = document.querySelectorAll(".stuffsContainer") as NodeListOf<HTMLDivElement>;
 const moneyContainer = document.querySelector("#moneyContainer") as HTMLDivElement;
 const papersContainer = document.querySelector("#papersContainer") as HTMLDivElement;
 const hygieneContainer = document.querySelector("#hygieneContainer") as HTMLDivElement;
@@ -18,6 +18,7 @@ const clothingContainer = document.querySelector("#clothingContainer") as HTMLDi
 export {
   newStuffInput,
   btngroup,
+  stuffscontainergroup,
   moneyContainer,
   papersContainer,
   hygieneContainer,
