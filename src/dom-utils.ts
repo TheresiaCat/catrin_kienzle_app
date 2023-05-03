@@ -2,7 +2,7 @@ const newStuffInput = document.querySelector("#newStuffInput") as HTMLInputEleme
 const validatorMessage = document.querySelector("#validatorMessage") as HTMLSpanElement;
 
 //Buttons
-const btn = document.querySelector(".btn") as HTMLButtonElement;
+const btngroup = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>; //all buttons in group 
 const moneyBtn = document.querySelector("#moneyBtn") as HTMLButtonElement;
 const papersBtn = document.querySelector("#papersBtn") as HTMLButtonElement;
 const hygieneBtn = document.querySelector("#hygieneBtn") as HTMLButtonElement;
@@ -17,7 +17,7 @@ const clothingContainer = document.querySelector("#clothingContainer") as HTMLDi
 
 export {
   newStuffInput,
-  btn,
+  btngroup,
   moneyContainer,
   papersContainer,
   hygieneContainer,
