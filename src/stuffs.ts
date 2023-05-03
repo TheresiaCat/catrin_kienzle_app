@@ -75,22 +75,13 @@ let jeans: Stuff = {
 }
 stuff.push(geld, ticket, ausweis,zahnbürste,shampoo,shirt,jeans);
 
-//choose right container depending on which button is pressed 
-let stuffsContainer:String
-function getContainer(stuffsContainer:String, btn: InnerHTML):String {
-  if(moneyBtn){
-    stuffsContainer="moneyContainer"
+//"this" is the actual clicked button 
+function handleButtonClick(this:HTMLButtonElement){
+  let id:String|null; //0 ist ausgeschlossen, dann keine rückgabe 
+  id = this.getAttribute("id"); 
+  if (id!==null){
+    let container: HTMLDivElement | null = document.querySelector("." + id); 
   }
-  else if(papersBtn){
-    stuffsContainer="papersContainer"
-  }
-  else if(hygieneBtn){
-    stuffsContainer="hygieneContainer"
-  }
-  else{
-    stuffsContainer="clothingContainer"
-  }
-  console.log(stuffsContainer); 
 }
 
 
@@ -106,7 +97,7 @@ function addStuff() {
     finished: false,
     timestamp,
     category: //h3 übergeben 
-    container: getContainer(),//How to get value? 
+    container: 
   };
   stuff.push(newStuff);
   reloadList();
@@ -135,12 +126,7 @@ function reloadList() {//insert Parameter Array
   //empty the stuff list
   stuffsContainer.innerHTML = "";
   // Iterate through Stuffs to refresh HTML
-  stuff//Array
-    .sort((stuff1, stuff2) => {
-      //sort stuff by date
-      return stuff1.timestamp.getTime()-stuff2.timestamp.getTime();
-    })
-    .forEach((stuff) => {
+  stuff.forEach((stuff) => {
       //create container for Stuff
       const singleStuffContainer = document.createElement("div");
       singleStuffContainer.id = stuff.id;
@@ -167,7 +153,7 @@ function reloadList() {//insert Parameter Array
       singleStuffContainer.appendChild(deleteBtn);
       singleStuffContainer.appendChild(finishedBtn);
       //append it to the wrapper
-      stuffsContainer.appendChild(singleStuffContainer);
+      stuffsContainer.appendChild(singleStuffContainer);//insert in chosen container 
       //separator between each item
       stuffsContainer.appendChild(document.createElement("hr"));
     });
