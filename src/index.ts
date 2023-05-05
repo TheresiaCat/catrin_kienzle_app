@@ -9,8 +9,8 @@ function initApp() {
   }
 
   for(let i=0; i<inputgroup.length;i++){
-    inputgroup[i].addEventListener("input", validateInput);
     inputgroup[i].addEventListener("input", handleInput);
+    inputgroup[i].addEventListener("input", validateInput);
     inputgroup[i].addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
   }
   reloadList(container);
