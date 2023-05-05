@@ -1,7 +1,6 @@
 import {newStuffInput, btngroup, moneyContainer,papersContainer,hygieneContainer,clothingContainer, moneyBtn, papersBtn, hygieneBtn, clothingBtn, validatorMessage } from "./dom-utils";
 
-//select the button to enable and to proof with input to validate
-
+//select the button to enable and to proof which input to validate
 function handleInput(this: HTMLInputElement) {
   let inputid: string | null = this.getAttribute("id"); 
   let button: HTMLButtonElement | null = null;
@@ -9,7 +8,7 @@ function handleInput(this: HTMLInputElement) {
     const substring = inputid.substring(3, 8);
     button = document.querySelector("#" + substring);
   }
-  return button;
+  return button;//is pressed button 
 }
 
 function validateInput(this: HTMLInputElement) {
