@@ -1,4 +1,4 @@
-import { addStuff, reloadList, handleButtonClick} from "./stuffs";
+import { addStuff, reloadList, handleButtonClick, container} from "./stuffs";
 import { newStuffInput, btngroup, inputgroup} from "./dom-utils";
 import { validateInput, handleInput } from "./validator";
 
@@ -13,7 +13,7 @@ function initApp() {
     inputgroup[i].addEventListener("input", handleInput);
     inputgroup[i].addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
   }
-  reloadList();
+  reloadList(container);
 }
 
 //add a stuff by pressing the enter key on the keyboard
