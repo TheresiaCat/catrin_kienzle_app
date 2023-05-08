@@ -1,25 +1,28 @@
-import { addStuff, reloadList, handleButtonClick, container} from "./stuffs";
-import { newStuffInput, btngroup, inputgroup} from "./dom-utils";
-import { validateInput, handleInput } from "./validator";
+import { addStuff, reloadList, handleButtonClick } from "./stuffs";
+import { allCategories } from "./dom-utils";
+import { validateInput } from "./validator";
 
-//nur ein button freigeschaltet werden aktuell auf klassen 
+//nur ein button freigeschaltet werden aktuell auf klassen
 function initApp() {
-  for(let i=0; i<btngroup.length;i++){
-    btngroup[i].addEventListener("click", handleButtonClick);
-  }
-
-  for(let i=0; i<inputgroup.length;i++){
-    inputgroup[i].addEventListener("input", handleInput);
-    inputgroup[i].addEventListener("input", validateInput);
-    inputgroup[i].addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
-  }
-  reloadList(container);
+  //FEEDBACK-JS: Neue Logik
+  allCategories.forEach((category) => {
+    //jeweilige category
+    const btn = category.querySelector("button") as HTMLButtonElement; // btn auswählen
+    const inp = category.querySelector("input") as HTMLInputElement; // inp auswählen
+    // FEEDBACK-JS: jetzt unnötig: inp.addEventListener("input", handleInput);
+    inp.addEventListener("input", (e) =>
+      validateInput(e.target as HTMLInputElement)
+    );
+    inp.addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
+    btn.addEventListener("click", () => handleButtonClick(inp));
+  });
+  reloadList();
 }
 
 //add a stuff by pressing the enter key on the keyboard
 function hasPressedEnterKeyOnStuffInput(e: KeyboardEvent) {
   if (e.key === "Enter") {
-    addStuff(); 
+    addStuff(e.target as HTMLInputElement);
   }
 }
 
