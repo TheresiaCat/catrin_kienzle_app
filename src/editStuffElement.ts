@@ -26,16 +26,16 @@ function deleteStuff(id: string) {
     }
   }
   
- 
-  // alters status (abgehakt?)
+   // alters status (abgehakt?)
   function ChangeStatus(id: string) {
-    editableStuff = stuff.map((stuffStatus) => {
-      if (stuffStatus.id === id) {
-        stuffStatus.finished = !stuffStatus.finished; // opposite finished State
-      }
-      return stuffStatus;
-    });
-    reloadList();
-  }
+    const currentStuff = document.getElementById(id)!;
+    const index = editableStuff.findIndex((stuff) => stuff.id === id);
+    if (index !== -1) {
+      editableStuff[index].finished = !editableStuff[index].finished;
+      currentStuff.querySelector("p")!.style.textDecoration = editableStuff[index].finished ? "line-through" : "none";
+      const finishedBtn = currentStuff.querySelector("button:nth-of-type(2)")!;
+      finishedBtn.innerHTML = editableStuff[index].finished ? "set unfinished" : "set finished";
+    }
+  }  
 
   export {deleteStuff, ChangeStatus}
