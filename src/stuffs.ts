@@ -3,10 +3,7 @@ import { validateInput } from "./validator";
 import { stuff } from "./data"; 
 import { deleteStuff, ChangeStatus } from "./editStuffElement";
 
-/**
- * FEEDBACK-JS: Das ergibt so nicht wirklich viel Sinn, weil der Container ja nie wirklich definiert ist
- * Ich habe jetzt einfach mal den ersten als Zuweisung genommen.
- */
+
 let container = document.querySelector(".stuffsContainer") as HTMLDivElement;
 
 function handleButtonClick(relatedInput: HTMLInputElement) {
@@ -38,6 +35,7 @@ function addStuff(targetInp: HTMLInputElement) {
   }
 }
 
+/*
 function reloadList() {
   //empty the stuff list
   //FEEDBACK-JS: truthy prüfung
@@ -77,6 +75,58 @@ function reloadList() {
       container.appendChild(document.createElement("hr"));
     });
   }
+}
+*/
+function reloadList() {
+  // Iterate through Stuffs to refresh HTML
+  stuff.forEach((stuff) => {
+    // create container for Stuff
+    const singleStuffContainer = document.createElement("div");
+    singleStuffContainer.id = stuff.id;
+    singleStuffContainer.innerHTML = `<p style="${
+      stuff.finished && "text-decoration: line-through;"
+    }">${stuff.description}</p>`;
+
+    // create Delete Button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.addEventListener("click", () => deleteStuff(stuff.id));
+    deleteBtn.style.backgroundColor = "red";
+    deleteBtn.innerHTML = "X";
+
+    // create finished Button
+    const finishedBtn = document.createElement("button");
+    finishedBtn.addEventListener("click", () => ChangeStatus(stuff.id));
+    if (stuff.finished) {
+      finishedBtn.innerHTML = "set unfinished";
+    } else {
+      finishedBtn.innerHTML = "set finished";
+    }
+
+    // get the container based on the category
+    let container: HTMLDivElement | null = null;
+    switch (stuff.category) {
+      case "money":
+        container = document.querySelector(".money") as HTMLDivElement;
+        break;
+      case "papers":
+        container = document.querySelector(".papers") as HTMLDivElement;
+        break;
+      case "hygiene":
+        container = document.querySelector(".hygiene") as HTMLDivElement;
+        break;
+      case "clothing":
+        container = document.querySelector(".clothing") as HTMLDivElement;
+        break;
+    }
+
+    // insert the buttons into the container
+    if (container) {
+      singleStuffContainer.appendChild(deleteBtn);
+      singleStuffContainer.appendChild(finishedBtn);
+      container.appendChild(singleStuffContainer);
+      container.appendChild(document.createElement("hr"));
+    }
+  });
 }
 
 export { addStuff, deleteStuff, reloadList, handleButtonClick };
