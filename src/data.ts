@@ -13,7 +13,7 @@ import { Stuff } from "./interface";
       
       let geld: Stuff = {
         description: "Geld",
-        id: "1",
+        id: "2",
         finished: false,
         timestamp: new Date(),
         category: "money"
@@ -21,7 +21,7 @@ import { Stuff } from "./interface";
       
       let ticket: Stuff = {
         description: "Reiseticket",
-        id: "1",
+        id: "3",
         finished: false,
         timestamp: new Date(),
         category: "papers"
@@ -29,7 +29,7 @@ import { Stuff } from "./interface";
       
       let ausweis: Stuff = {
         description: "Ausweis/Reisepass",
-        id: "1",
+        id: "4",
         finished: false,
         timestamp: new Date(),
         category: "papers"
@@ -37,7 +37,7 @@ import { Stuff } from "./interface";
       
       let zahnbürste: Stuff = {
         description: "Zahnbürste",
-        id: "1",
+        id: "5",
         finished: false,
         timestamp: new Date(),
         category: "hygiene"
@@ -45,7 +45,7 @@ import { Stuff } from "./interface";
       
       let shampoo: Stuff = {
         description: "Shampoo",
-        id: "1",
+        id: "6",
         finished: false,
         timestamp: new Date(),
         category: "hygiene"
@@ -53,7 +53,7 @@ import { Stuff } from "./interface";
       
       let shirt: Stuff = {
         description: "Shirt",
-        id: "1",
+        id: "7",
         finished: false,
         timestamp: new Date(),
         category: "clothing"
@@ -61,7 +61,7 @@ import { Stuff } from "./interface";
       
       let jeans: Stuff = {
         description: "jeans",
-        id: "1",
+        id: "8",
         finished: false,
         timestamp: new Date(),
         category: "clothing"
