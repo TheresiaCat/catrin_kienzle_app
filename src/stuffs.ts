@@ -1,65 +1,11 @@
 import { Stuff } from "./interface";
 import { validateInput } from "./validator";
+import { stuff } from "./data"; 
 
-//FEEDBACK-JS - vorgefertigte items kannst du z.b in ein modul data.ts verlagern
-let stuff: Stuff[] = [
-  {
-    description: "Kreditkarte",
-    id: "1",
-    finished: false,
-    timestamp: new Date()
-  }
-];
+//create nuew variable bcs cant edit inported "stuff" array
+let editableStuff = [...stuff]; 
+//imported variables can't get assigned 
 
-let geld: Stuff = {
-  description: "Geld",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-
-let ticket: Stuff = {
-  description: "Reiseticket",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-
-let ausweis: Stuff = {
-  description: "Ausweis/Reisepass",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-
-let zahnbürste: Stuff = {
-  description: "Zahnbürste",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-
-let shampoo: Stuff = {
-  description: "Shampoo",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-
-let shirt: Stuff = {
-  description: "Shirt",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-
-let jeans: Stuff = {
-  description: "jeans",
-  id: "1",
-  finished: false,
-  timestamp: new Date()
-};
-stuff.push(geld, ticket, ausweis, zahnbürste, shampoo, shirt, jeans);
 
 //"this" is the actual clicked button
 //get the right container by the button that is clicked
@@ -100,13 +46,13 @@ function addStuff(targetInp: HTMLInputElement) {
 
 function deleteStuff(id: string) {
   // let all stuffs pass except the one with the id that will be deleted
-  stuff = stuff.filter((stuff: Stuff) => stuff.id !== id);
+  editableStuff = stuff.filter((stuff: Stuff) => stuff.id !== id);
   reloadList();
 }
 
 // alters status (abgehakt?)
 function ChangeStatus(id: string) {
-  stuff = stuff.map((stuffStatus) => {
+  editableStuff = stuff.map((stuffStatus) => {
     if (stuffStatus.id === id) {
       stuffStatus.finished = !stuffStatus.finished; // opposite finished State
     }
