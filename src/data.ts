@@ -6,7 +6,8 @@ import { Stuff } from "./interface";
           description: "Kreditkarte",
           id: "1",
           finished: false,
-          timestamp: new Date()
+          timestamp: new Date(),
+          category: "money"
         }
       ];
       
@@ -14,49 +15,56 @@ import { Stuff } from "./interface";
         description: "Geld",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "money"
       };
       
       let ticket: Stuff = {
         description: "Reiseticket",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "papers"
       };
       
       let ausweis: Stuff = {
         description: "Ausweis/Reisepass",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "papers"
       };
       
       let zahnbürste: Stuff = {
         description: "Zahnbürste",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "hygiene"
       };
       
       let shampoo: Stuff = {
         description: "Shampoo",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "hygiene"
       };
       
       let shirt: Stuff = {
         description: "Shirt",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "clothing"
       };
       
       let jeans: Stuff = {
         description: "jeans",
         id: "1",
         finished: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        category: "clothing"
       };
       stuff.push(geld, ticket, ausweis, zahnbürste, shampoo, shirt, jeans);
 

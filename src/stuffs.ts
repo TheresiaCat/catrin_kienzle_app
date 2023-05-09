@@ -6,10 +6,6 @@ import { stuff } from "./data";
 let editableStuff = [...stuff]; 
 //imported variables can't get assigned 
 
-
-//"this" is the actual clicked button
-//get the right container by the button that is clicked
-
 /**
  * FEEDBACK-JS: Das ergibt so nicht wirklich viel Sinn, weil der Container ja nie wirklich definiert ist
  * Ich habe jetzt einfach mal den ersten als Zuweisung genommen.
@@ -28,7 +24,8 @@ function addStuff(targetInp: HTMLInputElement) {
       description: targetInp.value,
       id,
       finished: false,
-      timestamp: new Date()
+      timestamp: new Date(),
+      category: "money"
     };
 
     stuff.push(newStuff);
@@ -62,7 +59,6 @@ function ChangeStatus(id: string) {
 }
 
 function reloadList() {
-  //insert Parameter Array
   //empty the stuff list
   //FEEDBACK-JS: truthy prüfung
   if (container) {
