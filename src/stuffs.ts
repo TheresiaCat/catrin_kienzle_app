@@ -1,10 +1,7 @@
 import { Stuff } from "./interface";
 import { validateInput } from "./validator";
 import { stuff } from "./data"; 
-
-//create nuew variable bcs cant edit inported "stuff" array
-let editableStuff = [...stuff]; 
-//imported variables can't get assigned 
+import { deleteStuff, ChangeStatus } from "./editStuffElement";
 
 /**
  * FEEDBACK-JS: Das ergibt so nicht wirklich viel Sinn, weil der Container ja nie wirklich definiert ist
@@ -39,23 +36,6 @@ function addStuff(targetInp: HTMLInputElement) {
     // empty input
     targetInp.value = "";
   }
-}
-
-function deleteStuff(id: string) {
-  // let all stuffs pass except the one with the id that will be deleted
-  editableStuff = stuff.filter((stuff: Stuff) => stuff.id !== id);
-  reloadList();
-}
-
-// alters status (abgehakt?)
-function ChangeStatus(id: string) {
-  editableStuff = stuff.map((stuffStatus) => {
-    if (stuffStatus.id === id) {
-      stuffStatus.finished = !stuffStatus.finished; // opposite finished State
-    }
-    return stuffStatus;
-  });
-  reloadList();
 }
 
 function reloadList() {
