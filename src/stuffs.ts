@@ -10,8 +10,24 @@ function handleButtonClick(relatedInput: HTMLInputElement) {
   addStuff(relatedInput);
 }
 
+
+function getCategoryFromInputId(inputId: string): string {
+  switch (inputId) {
+    case 'newmoneyinput':
+      return 'money';
+    case 'newpapersinput':
+      return 'papers';
+    case 'newhygieneinput':
+      return 'hygiene';
+    case 'newclothinginput':
+      return 'clothing';
+    default:
+      return '';
+  }
+}
+
 function addStuff(targetInp: HTMLInputElement) {
-  // const category = targetInp.parentElement!.id;
+  const category = getCategoryFromInputId(targetInp.id);
   if (validateInput(targetInp)) {
     const id = `${new Date().getTime()}-rn-${Math.floor(Math.random() * 999)}`;
     const newStuff: Stuff = {
@@ -19,9 +35,8 @@ function addStuff(targetInp: HTMLInputElement) {
       id,
       finished: false,
       timestamp: new Date(),
-      category: "money"
+      category,
     };
-
     stuff.push(newStuff);
 
     try {
