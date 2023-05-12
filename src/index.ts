@@ -4,7 +4,7 @@ import { validateInput } from "./validator";
 
 function initApp() {
   allCategories.forEach((category) => {
-    //jeweilige category
+    //für jeweilige Kategorie 
     const btn = category.querySelector("button") as HTMLButtonElement; // btn auswählen
     const inp = category.querySelector("input") as HTMLInputElement; // inp auswählen
     inp.addEventListener("input", (e) => validateInput(e.target as HTMLInputElement));

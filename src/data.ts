@@ -58,8 +58,8 @@ import { Stuff } from "./interface";
         category: "clothing"
       };
       stuff.push(geld, ticket, ausweis, zahnbürste, shampoo, shirt, jeans);
-
-
+      
+      localStorage.setItem('stuff', JSON.stringify(stuff));//wird zu string weil arrays nicht in localstorage gespeichert werden können 
 
   export {stuff}; 
   

@@ -1,4 +1,10 @@
 import { stuff } from "./data";
+import { Stuff } from "./interface";
+
+const storedStuff = localStorage.getItem('stuff');
+if (storedStuff) {
+  const stuff: Stuff[] = JSON.parse(storedStuff);
+}
 
 //imported variables can't get assigned 
 let editableStuff = [...stuff]; 

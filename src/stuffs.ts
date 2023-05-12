@@ -3,25 +3,14 @@ import { validateInput } from "./validator";
 import { stuff } from "./data"; 
 import { deleteStuff, ChangeStatus } from "./editStuffElement";
 
-
-function handleButtonClick(relatedInput: HTMLInputElement) {
-  addStuff(relatedInput);
+const storedStuff = localStorage.getItem('stuff');
+if (storedStuff) {
+  const stuff: Stuff[] = JSON.parse(storedStuff);
 }
 
 
-function getCategoryFromInputId(inputId: string): string {
-  switch (inputId) {
-    case 'newmoneyinput':
-      return 'money';
-    case 'newpapersinput':
-      return 'papers';
-    case 'newhygieneinput':
-      return 'hygiene';
-    case 'newclothinginput':
-      return 'clothing';
-    default:
-      return '';
-  }
+function handleButtonClick(relatedInput: HTMLInputElement) {
+  addStuff(relatedInput);
 }
 
 function addStuff(targetInp: HTMLInputElement) {
@@ -36,13 +25,7 @@ function addStuff(targetInp: HTMLInputElement) {
       category,
     };
     stuff.push(newStuff);
-
-    try {
-      reloadList();
-    } catch (error) {
-      console.error(error);
-    }
-
+    reloadList();
     // empty input
     targetInp.value = "";
   }
