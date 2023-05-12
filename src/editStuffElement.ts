@@ -1,10 +1,7 @@
-import { reloadList } from "./stuffs";
 import { stuff } from "./data";
-import { Stuff } from "./interface";
 
-//create nuew variable bcs cant edit inported "stuff" array
-let editableStuff = [...stuff]; 
 //imported variables can't get assigned 
+let editableStuff = [...stuff]; 
 
   function deleteStuff(id: string) {
     const index = stuff.findIndex((s) => s.id === id);
@@ -25,7 +22,7 @@ let editableStuff = [...stuff];
       editableStuff[index].finished = !editableStuff[index].finished;
       currentStuff.querySelector("p")!.style.textDecoration = editableStuff[index].finished ? "line-through" : "none";
       const finishedBtn = currentStuff.querySelector("button:nth-of-type(2)")!;
-      finishedBtn.innerHTML = editableStuff[index].finished ? "set unfinished" : "set finished";
+      finishedBtn.innerHTML = editableStuff[index].finished ? "is not in suitcase" : "put in suitcase";
     }
   }  
 

@@ -69,9 +69,9 @@ function reloadList() {
     const finishedBtn = document.createElement("button");
     finishedBtn.addEventListener("click", () => ChangeStatus(stuff.id));
     if (stuff.finished) {
-      finishedBtn.innerHTML = "set unfinished";
+      finishedBtn.innerHTML = "is not in Suitcase";
     } else {
-      finishedBtn.innerHTML = "set finished";
+      finishedBtn.innerHTML = "put in suitcase";
     }
 
     // get the container based on the category
