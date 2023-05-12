@@ -1,12 +1,10 @@
 import { Stuff } from "./interface";
-//FEEDBACK-JS - vorgefertigte items kannst du z.b in ein modul data.ts verlagern
 
     let stuff: Stuff[] = [
         {
           description: "Kreditkarte",
           id: "1",
           finished: false,
-          timestamp: new Date(),
           category: "money"
         }
       ];
@@ -15,7 +13,6 @@ import { Stuff } from "./interface";
         description: "Geld",
         id: "2",
         finished: false,
-        timestamp: new Date(),
         category: "money"
       };
       
@@ -23,7 +20,6 @@ import { Stuff } from "./interface";
         description: "Reiseticket",
         id: "3",
         finished: false,
-        timestamp: new Date(),
         category: "papers"
       };
       
@@ -31,7 +27,6 @@ import { Stuff } from "./interface";
         description: "Ausweis/Reisepass",
         id: "4",
         finished: false,
-        timestamp: new Date(),
         category: "papers"
       };
       
@@ -39,7 +34,6 @@ import { Stuff } from "./interface";
         description: "Zahnbürste",
         id: "5",
         finished: false,
-        timestamp: new Date(),
         category: "hygiene"
       };
       
@@ -47,7 +41,6 @@ import { Stuff } from "./interface";
         description: "Shampoo",
         id: "6",
         finished: false,
-        timestamp: new Date(),
         category: "hygiene"
       };
       
@@ -55,7 +48,6 @@ import { Stuff } from "./interface";
         description: "Shirt",
         id: "7",
         finished: false,
-        timestamp: new Date(),
         category: "clothing"
       };
       
@@ -63,7 +55,6 @@ import { Stuff } from "./interface";
         description: "jeans",
         id: "8",
         finished: false,
-        timestamp: new Date(),
         category: "clothing"
       };
       stuff.push(geld, ticket, ausweis, zahnbürste, shampoo, shirt, jeans);

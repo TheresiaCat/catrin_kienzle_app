@@ -33,7 +33,6 @@ function addStuff(targetInp: HTMLInputElement) {
       description: targetInp.value,
       id,
       finished: false,
-      timestamp: new Date(),
       category,
     };
     stuff.push(newStuff);
