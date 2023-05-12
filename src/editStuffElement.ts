@@ -6,15 +6,6 @@ import { Stuff } from "./interface";
 let editableStuff = [...stuff]; 
 //imported variables can't get assigned 
 
-
-/*
-function deleteStuff(id: string) {
-    // let all stuffs pass except the one with the id that will be deleted
-    editableStuff = stuff.filter((stuff: Stuff) => stuff.id !== id);
-    reloadList();
-  }
-  */
-
   function deleteStuff(id: string) {
     const index = stuff.findIndex((s) => s.id === id);
     if (index !== -1) {

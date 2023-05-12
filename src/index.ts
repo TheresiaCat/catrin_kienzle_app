@@ -2,17 +2,12 @@ import { addStuff, reloadList, handleButtonClick } from "./stuffs";
 import { allCategories } from "./dom-utils";
 import { validateInput } from "./validator";
 
-//nur ein button freigeschaltet werden aktuell auf klassen
 function initApp() {
-  //FEEDBACK-JS: Neue Logik
   allCategories.forEach((category) => {
     //jeweilige category
     const btn = category.querySelector("button") as HTMLButtonElement; // btn auswählen
     const inp = category.querySelector("input") as HTMLInputElement; // inp auswählen
-    // FEEDBACK-JS: jetzt unnötig: inp.addEventListener("input", handleInput);
-    inp.addEventListener("input", (e) =>
-      validateInput(e.target as HTMLInputElement)
-    );
+    inp.addEventListener("input", (e) => validateInput(e.target as HTMLInputElement));
     inp.addEventListener("keydown", hasPressedEnterKeyOnStuffInput);
     btn.addEventListener("click", () => handleButtonClick(inp));
   });

@@ -4,8 +4,6 @@ import { stuff } from "./data";
 import { deleteStuff, ChangeStatus } from "./editStuffElement";
 
 
-let container = document.querySelector(".stuffsContainer") as HTMLDivElement;
-
 function handleButtonClick(relatedInput: HTMLInputElement) {
   addStuff(relatedInput);
 }
@@ -50,48 +48,7 @@ function addStuff(targetInp: HTMLInputElement) {
   }
 }
 
-/*
-function reloadList() {
-  //empty the stuff list
-  //FEEDBACK-JS: truthy prüfung
-  if (container) {
-    //nur zugreifen wenn container definiert ist
-    container.innerHTML = "";
-    // Iterate through Stuffs to refresh HTML
-    stuff.forEach((stuff) => {
-      //create container for Stuff
-      const singleStuffContainer = document.createElement("div");
-      singleStuffContainer.id = stuff.id;
-      singleStuffContainer.innerHTML = `<p style="${
-        stuff.finished && "text-decoration: line-through;"
-      }">${stuff.description}</p>`;
 
-      //create Delete Button
-      const deleteBtn = document.createElement("button");
-      deleteBtn.addEventListener("click", () => deleteStuff(stuff.id));
-      deleteBtn.style.backgroundColor = "red";
-      deleteBtn.innerHTML = "X";
-
-      //create finished Button
-      const finishedBtn = document.createElement("button");
-      finishedBtn.addEventListener("click", () => ChangeStatus(stuff.id));
-      if (stuff.finished) {
-        finishedBtn.innerHTML = "set unfinished";
-      } else {
-        finishedBtn.innerHTML = "set finished";
-      }
-
-      //get the delete btn in
-      singleStuffContainer.appendChild(deleteBtn);
-      singleStuffContainer.appendChild(finishedBtn);
-      //append it to the wrapper
-      container.appendChild(singleStuffContainer); //insert in chosen container
-      //separator between each item
-      container.appendChild(document.createElement("hr"));
-    });
-  }
-}
-*/
 function reloadList() {
   // Iterate through Stuffs to refresh HTML
   stuff.forEach((stuff) => {
