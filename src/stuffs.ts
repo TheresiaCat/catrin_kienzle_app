@@ -25,7 +25,8 @@ function getCategoryFromInputId(inputId: string): string {
 }
 
 function addStuff(targetInp: HTMLInputElement) {
-  const category = getCategoryFromInputId(targetInp.id);
+  //const category = getCategoryFromInputId(targetInp.id);
+  const category = targetInp.parentElement!.id
   if (validateInput(targetInp)) {
     const id = `${new Date().getTime()}-rn-${Math.floor(Math.random() * 999)}`;
     const newStuff: Stuff = {
